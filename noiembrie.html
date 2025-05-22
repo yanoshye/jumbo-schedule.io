@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumbo Schedule - Noiembrie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/bow.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <a id="left-arrow" style="color: white; font-size: 40px; text-decoration: none; cursor: pointer;">←</a>
+        <img src="images/log.png" alt="Jumbo Logo">
+        <a id="right-arrow" style="color: white; font-size: 40px; text-decoration: none; cursor: pointer;">→</a>
+    </header>
+    <div class="white-box">
+        <table id="attendance-table" data-days="30">
+            <thead>
+                <tr class="zi_si_data">
+                    <th style="border-radius: 29px 0px 0px 0px; font-size: 35px;" rowspan="2">Noiembrie</th>
+                    <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+                    <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+                    <th>11</th><th>12</th><th>13</th><th>14</th><th>15</th>
+                    <th>16</th><th>17</th><th>18</th><th>19</th><th>20</th>
+                    <th>21</th><th>22</th><th>23</th><th>24</th><th>25</th>
+                    <th>26</th><th>27</th><th>28</th><th>29</th><th>30</th>
+                </tr>
+                <tr class="zi_si_data">
+                    <th>Vi</th><th>Sâ</th><th>Du</th><th>Lu</th><th>Ma</th>
+                    <th>Mi</th><th>Jo</th><th>Vi</th><th>Sâ</th><th>Du</th>
+                    <th>Lu</th><th>Ma</th><th>Mi</th><th>Jo</th><th>Vi</th>
+                    <th>Sâ</th><th>Du</th><th>Lu</th><th>Ma</th><th>Mi</th>
+                    <th>Jo</th><th>Vi</th><th>Sâ</th><th>Du</th><th>Lu</th>
+                    <th>Ma</th><th>Mi</th><th>Jo</th><th>Vi</th><th>Sâ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="valentin"><td><button class="name-button">Valentin (Bucătar)</button></td></tr>
+                <tr id="marina"><td><button class="name-button">Marina</button></td></tr>
+                <tr id="vitalie"><td><button class="name-button">Vitalie (Bucătar)</button></td></tr>
+                <tr id="olga_buc"><td><button class="name-button">Olga (Bucătar)</button></td></tr>
+                <tr id="natalia"><td><button class="name-button">Natalia</button></td></tr>
+                <tr id="marina_vase"><td><button class="name-button">Marina (Vase)</button></td></tr>
+                <tr id="diana"><td><button class="name-button">Diana</button></td></tr>
+                <tr id="elena"><td><button class="name-button">Elena</button></td></tr>
+                <tr id="olga"><td><button class="name-button">Olga</button></td></tr>
+                <tr id="snejana"><td><button class="name-button">Snejana</button></td></tr>
+                <tr id="svetlana"><td><button class="name-button">Svetlana</button></td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <button class="close-btn">×</button>
+            <div class="top-buttons">
+                <button id="sosire-btn" class="popup-btn">Sosire</button>
+                <button id="plecare-btn" class="popup-btn">Plecare</button>
+            </div>
+            <button id="manual-btn" class="popup-btn manual-btn">Manual</button>
+            <div id="manual-inputs" class="hidden">
+                <label for="manual-sosire">Sosire:</label>
+                <input type="text" id="manual-sosire" placeholder="00:00">
+                <label for="manual-plecare">Plecare:</label>
+                <input type="text" id="manual-plecare" placeholder="00:00">
+                <button id="manual-ok" class="popup-btn">OK</button>
+                <button id="manual-clear" class="popup-btn">Clear</button>
+            </div>
+        </div>
+    </div>
+    <script>
+    // Completează tabelul cu 30 de celule pentru fiecare angajat
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('tbody tr').forEach(tr => {
+            for (let i = 0; i < 30; i++) {
+                const td = document.createElement('td');
+                td.className = 'ora';
+                td.innerHTML = '<div class="top"></div>-----<div class="bottom"></div>';
+                tr.appendChild(td);
+            }
+        });
+    });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
